@@ -10,14 +10,21 @@ repositories {
 }
 
 dependencies {
-    // JUnit (если вы хотите оставить его)
+    // JUnit 5
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+
+    // JUnit 4
+    testImplementation 'junit:junit:4.13.2'
+
+    // JUnit Vintage (выполнения тестов JUnit 4 через платформу JUnit 5)
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.10.0'
 
     // TestNG
     testImplementation 'org.testng:testng:7.7.1'
 }
 
 test {
-    useJUnitPlatform() // Для JUnit
+    useJUnitPlatform() // Для JUnit 5
     useTestNG()        // Для TestNG
+    useJUnit()         // JUnit 4
 }
