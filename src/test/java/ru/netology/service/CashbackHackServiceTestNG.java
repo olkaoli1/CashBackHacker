@@ -31,7 +31,7 @@ public class CashbackHackServiceTestNG {
     public void shouldReturn100IfAmountIs900() {
         CashbackHackService service = new CashbackHackService();
         int amount = 900;
-
+        git checkout junit4
         int actual = service.remain(amount);
         int expected = 100;
 
