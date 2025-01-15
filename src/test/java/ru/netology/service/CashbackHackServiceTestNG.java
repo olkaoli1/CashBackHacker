@@ -37,4 +37,14 @@ public class CashbackHackServiceTestNG {
 
         Assert.assertEquals(actual, expected);
     }
+
+    @Test
+    public void shouldReturn0IfAmountIs1000() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 1000; // Граничное значение
+        int actual = service.remain(amount);
+        int expected = 0; // Ожидаем 0, но метод вернёт 1000 (ошибка)
+
+        Assert.assertEquals(actual, expected, "Тест на граничное значение 1000");
+    }
 }
